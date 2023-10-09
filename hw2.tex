@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\title{MATH 620: Homework 2}
+\author{Fernando}
+\date{October 10, 2023}
+\begin{document}
+\maketitle
+\section{Problem 1}
+\subsection{Part a}
+We want to write $D=\{x_0+y: y\in V\}$ (where V is a linear subspace).
+In this case we can take $x_0=3x+2$ and $V=\{\phi\in X:
+\phi(0)=\frac{\partial\phi}{\partial x}(1)=0\}$. It
+is easy to see that $D$ is a linear subspace because it is closed under adition
+and scalar product. Also the boundary conditions are satisfied so indeed we can
+write $D$ in this way.
+\subsection{Part b}
+Take $\phi_1,\phi_2\in D$ we have to prove that:
+$(1-\alpha)\phi_1+\alpha \phi_2 \in D,\forall \alpha \in [0,1]$.
+This is clearly in $C^k([0,1])$ but also:
+\[
+\left((1-\alpha)\phi_1+\alpha\phi_2\right)(0)
+=\left((1-\alpha)2+\alpha2\right)=2,
+\]
+and
+\[
+\left[\frac{\partial}{\partial x}\left((1-\alpha)\phi_1+\alpha \phi_2\right)\right](1)= 
+\left((1-\alpha)\frac{\partial \phi_1}{\partial x}+\alpha\frac{\partial
+\phi_2}{\partial x}\right)(1) = (1-\alpha)3+\alpha 3=3.
+\]
+So $D$ is convex.
+\subsection{Part c}
+\section{Problem 2}
+\subsection{Part a}
+\subsection{Part b}
+\section{Problem 3}
+\section{Problem 4}
+\section{Problem 5}
+\end{document}
