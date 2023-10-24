@@ -52,8 +52,46 @@ Hessian matrix but we will get the same result.
 TODO
 \section{Problem 2}
 \subsection{Part a}
+With this approcimation we have
+\[
+	f(x,u,u')=\frac{\mu}{2}(u')^2 -gu,
+\]
+so
+\[
+	f_u=-g
+\]
+\[
+	f_\xi=\mu u'
+\]
+\[
+	\frac{d}{dx}f_\xi = \mu u'',
+\]
+then
+\[
+	\mu u''=-g
+\]
+with same initial conditions, i.e. $u(a)=u(b)=1$.
 \subsection{Part b}
+For this part we can proceed exactly as before and we see that the map
+$(u,\xi)\mapsto f(x,u,\xi)$ is convex for every $x$. So the solution is indeed
+a minimizer.
+
+\textbf{Uniqueness?}
+
+TODO
 \subsection{Part c}
+By integrating the E-L equation two times we get that
+\[
+	u=-\frac{g}{2\mu} x^2 +c_1x+c_2.
+\]
+Using the conditions on the boundary we find $c_1$ and $c_2$. In this case
+\[
+	c_1=\frac{g}{2\mu}(a+b)
+\]
+and
+\[
+	c_2=1+\frac{g}{2\mu}a^2-c_1a.
+\]
 \section{Problem 3}
 \subsection{Part a}
 \subsection{Part b}
