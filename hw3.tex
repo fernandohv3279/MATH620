@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathtools}
+\usepackage{listings}
+\title{MATH 620: Homework 3}
+\author{Fernando}
+\date{October 17, 2023}
+\begin{document}
+\maketitle
+\section{Problem 1}
+\subsection{Part a}
+In this case
+\[
+	f(x,u,\xi)=\mu(\sqrt{1+(u')^2}-1)-gu,
+\]
+so
+\[ f_u=-g \]
+\[ f_\xi =\frac{\mu u'}{\sqrt{1+(u')^2}} \]
+\[ \frac{d}{dx} f_\xi =\frac{\mu u''}{(1+(u')^2)^{3/2}}. \]
+Then the E-L equation is
+\[
+\frac{\mu u''}{(1+(u')^2)^{3/2}} = -g,
+\]
+or equivalently:
+\[
+\mu u'' -g\cdot(1+(u')^2)^{3/2} = 0,
+\]
+with initial conditions $u(a)=u(b)=1$.
+\subsection{Part b}
+In order to prove that $\overline u$ is a minimizer it is enough to show that
+the map $(x,\xi)\mapsto f(x,u,\xi)$ is convex for every $x$.
+In other words: is the function
+\[
+	h((x,y))=\mu(\sqrt{1+y^2} -1) -gx
+\]
+convex?
+
+The answer is yes. We can see that this function is linear in $x$ and for $y$
+we have that
+\[
+	\partial_{yy} h = \frac{\mu}{(1+y^2)^{3/2}}.
+\]
+In this particular case this is enough to conclude that the function is convex.
+Because it is convex in the $y$ direction and linear in the $x$ direction. This
+is an intuitive explanation, if we want to be more precise we can compute the
+Hessian matrix but we will get the same result.
+
+\textbf{Uniqueness?}
+
+TODO
+\section{Problem 2}
+\subsection{Part a}
+\subsection{Part b}
+\subsection{Part c}
+\section{Problem 3}
+\subsection{Part a}
+\subsection{Part b}
+\section{Problem 4}
+\section{Problem 5}
+% LEAL
+\end{document}
