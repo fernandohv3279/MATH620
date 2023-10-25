@@ -127,6 +127,33 @@ function which also suggests that the function is convex.
 
 This allows us to conjecture that the solution is unique.
 \section{Problem 4}
+Notation: $f_\xi = (f_{\xi_1},\dots,f_{\xi_n})$
+Following the proof we saw in class we start with
+\begin{align*}
+	0=DI[u](v)
+	&= \lim_{\varepsilon \to 0}\frac{I[u+\varepsilon v]-I[u]}{\varepsilon}\\
+	&=\lim_{\varepsilon \to 0} \frac{1}{\varepsilon}\int_\Omega f(x,u+\varepsilon v,\nabla u+\varepsilon
+	\nabla v)-f(x,u,\nabla u)\\
+	&=\int_\Omega vf_u(x,u,\nabla u)+\nabla v\cdot f_\xi(x,u,\nabla u)\\
+	&=\int_\Omega vf_u+\nabla v\cdot f_\xi.
+\end{align*}
+Using integration by parts (divergence theorem) we get:
+\begin{align*}
+	\int_\Omega\nabla v \cdot f_\xi
+	&= \int_{\partial\Omega}v (f_\xi \cdot n) - \int_\Omega v (\nabla \cdot f_\xi)\\
+	&= - \int_\Omega v (\nabla \cdot f_\xi),
+\end{align*}
+and observe that the boundary term is 0 because $v$ is 0 at
+the boundary.
+Then we get
+\[
+	0=\int_\Omega v(f_u-\nabla \cdot f_\varepsilon).
+\]
+Using the fundamental theorem of calculus in variations we get the E-L
+equation
+\[
+	f_u=\nabla \cdot f_\varepsilon.
+\]
 \section{Problem 5}
 % LEAL
 \end{document}
