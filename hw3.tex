@@ -93,8 +93,39 @@ and
 	c_2=1+\frac{g}{2\mu}a^2-c_1a.
 \]
 \section{Problem 3}
-\subsection{Part a}
-\subsection{Part b}
+If we let $\lambda=\sqrt{\frac{1}{2g}}$ then
+\[
+	f(x,u,\xi)=\lambda(1+\xi^2)^{1/2}(H-u)^{-1/2}.
+\]
+Then
+\[
+	f_u=\frac{\lambda}{2}(1+\xi^2)^{1/2}(H-u)^{-3/2}
+\]
+and
+\[
+	f_\xi=\lambda\xi(1+\xi^2)^{-1/2}(H-u)^{-1/2}
+\]
+so the E-L equation becomes
+\[
+	\frac{d}{dx}(\lambda\xi(1+\xi^2)^{-1/2}(H-u)^{-1/2})
+	=\frac{\lambda}{2}(1+\xi^2)^{1/2}(H-u)^{-3/2},
+\]
+with initial conditions $u(0)=H$ and $u(L)=0$.
+
+Now we analyse the convexity of
+\[
+	h(x,y)=\lambda (1+y^2)^{1/2}(H-x)^{-1/2}.
+\]
+We can see that if we fix $x$ we get a strictly convex function and if we fix
+$y$ again we get a strictly convex function. On top of that we see
+that $h$ is smooth so intuitively it makes sense that this function
+is strictly convex, if we want a rigorous argument we could take the Hessian
+but this would be a lot of calculation. The figure below shows a plot of the
+function which also suggests that the function is convex.
+
+\includegraphics[width=0.9\textwidth]{convex.png}
+
+This allows us to conjecture that the solution is unique.
 \section{Problem 4}
 \section{Problem 5}
 % LEAL
