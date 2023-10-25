@@ -49,7 +49,10 @@ Hessian matrix but we will get the same result.
 
 \textbf{Uniqueness?}
 
-TODO
+We cannot conclude uniqueness from the theorem we saw in class
+because we don't have strict convexity but if this model is correct
+the solution should be unique because we know that is what happens
+in the real world; however this is not a proof.
 \section{Problem 2}
 \subsection{Part a}
 With this approcimation we have
@@ -78,7 +81,7 @@ a minimizer.
 
 \textbf{Uniqueness?}
 
-TODO
+Again we can't conclude uniqueness from the theorem we saw in class but we do this in the next section.
 \subsection{Part c}
 By integrating the E-L equation two times we get that
 \[
@@ -127,7 +130,8 @@ function which also suggests that the function is convex.
 
 This allows us to conjecture that the solution is unique.
 \section{Problem 4}
-Notation: $f_\xi = (f_{\xi_1},\dots,f_{\xi_n})$
+We will use the notation: $f_\xi = (f_{\xi_1},\dots,f_{\xi_n})$.
+
 Following the proof we saw in class we start with
 \begin{align*}
 	0=DI[u](v)
@@ -155,5 +159,40 @@ equation
 	f_u=\nabla \cdot f_\varepsilon.
 \]
 \section{Problem 5}
-% LEAL
+In this case $f(x,u,\xi)=\mu(\sqrt{1+|\nabla u|^2}-1)-gu$ so
+\[
+	f_u=-g
+\]
+\[
+	f_\xi=\mu\xi(1+|\xi|^2)^{-1/2}
+\]
+hence the E-L equation is
+\[
+	\nabla \cdot \mu\xi(1+|\xi|^2)^{-1/2} = -g
+\]
+i.e.
+\[
+	\nabla \cdot \xi(1+|\xi|^2)^{-1/2}=-g/\mu.
+\]
+
+For the simplified case we get
+\[
+f(x,u,\xi)=\frac{\mu}{2}|\xi|^2-gu.
+\]
+so
+\[
+	f_u=-g
+\]
+\[
+	f_\xi = \mu\xi
+\]
+\[
+	\nabla \cdot f_\xi = \mu \nabla \cdot \xi = \mu \Delta u
+\]
+then
+\[
+	\Delta u =-g/\mu,
+\]
+i.e. the Laplace equation.
+
 \end{document}
