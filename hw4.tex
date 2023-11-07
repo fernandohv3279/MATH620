@@ -85,5 +85,36 @@ Convergence in $||\cdot||_2$ implies convergence in $||\cdot||_1$ which in turn
 implies convergence in $||\cdot||_3$, but the converse is not true. Take the
 same example as before. Again these norms are not equivalent.
 \section*{Problem 3}
+\subsection*{Norm axioms}
+In the previous section we proved this for any continuously differentiable
+function on [0,1] so in particular this is true for all polynomials.
+\subsection*{Norm equivalence}
+\subsubsection*{$||\cdot||_1$ vs $||\cdot||_3$}
+We proceed by induction.
+
+For n=0 (constant polynomials).
+
+We want to find $c_0$ and $C_0$ so that
+\[
+	c_0||u||_1\leq ||u||_2 \leq C_0||u||_1.
+\]
+Because $||u||_2=||u||_1+||u'||_1$ and $u'=0$ we can take
+$c_0=C_0=1$.
+
+Now for $n$
+
+We want to find $c_n$ and $C_n$ so that
+\[
+	c_n||u||_1\leq ||u||_2 \leq C_n||u||_1.
+\]
+Because $||u||_2=||u||_1+||u'||_1$ we can take $c_n=1$.
+
+As for $C_n$ we see that
+\begin{align*}
+\Big|\Big|\sum_0^n a_ix^i\Big|\Big|_2 &\leq ||a_nx^n||_2 + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_2\\
+&= |a_n| + n|a_n| + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_2\\
+&\leq |a_n| + n|a_n| + C_{n-1}\Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_1\\
+&\leq \max\{C_{n-1},n+1\} \left(|a_n| + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_1\right)
+\end{align*}
 \section*{Problem 4}
 \end{document}
