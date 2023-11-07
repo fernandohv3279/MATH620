@@ -89,32 +89,61 @@ same example as before. Again these norms are not equivalent.
 In the previous section we proved this for any continuously differentiable
 function on [0,1] so in particular this is true for all polynomials.
 \subsection*{Norm equivalence}
+In order to prove that these norms are equivalent we can just repeat the proof
+that all norms are equivalent which only uses the fact that the norm is
+continuous and the unit ball is compact, but given the conversation we had in
+class we want to find an explicit constant for each case.
 \subsubsection*{$||\cdot||_1$ vs $||\cdot||_3$}
-We proceed by induction.
-
-For n=0 (constant polynomials).
-
-We want to find $c_0$ and $C_0$ so that
+We want to find $c$ and $C$ so that
 \[
-	c_0||u||_1\leq ||u||_2 \leq C_0||u||_1.
+	c||p||_3\leq ||p||_1 \leq C||p||_3.
 \]
-Because $||u||_2=||u||_1+||u'||_1$ and $u'=0$ we can take
-$c_0=C_0=1$.
-
-Now for $n$
-
-We want to find $c_n$ and $C_n$ so that
+Notice that we can take $c=1$ because
 \[
-	c_n||u||_1\leq ||u||_2 \leq C_n||u||_1.
+||p||_3^2=\int_0^1|p|^2\leq \int_0^1||p||_1^2=||p||_1^2.
 \]
-Because $||u||_2=||u||_1+||u'||_1$ we can take $c_n=1$.
+Now let's find $C$.
 
-As for $C_n$ we see that
-\begin{align*}
-\Big|\Big|\sum_0^n a_ix^i\Big|\Big|_2 &\leq ||a_nx^n||_2 + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_2\\
-&= |a_n| + n|a_n| + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_2\\
-&\leq |a_n| + n|a_n| + C_{n-1}\Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_1\\
-&\leq \max\{C_{n-1},n+1\} \left(|a_n| + \Big|\Big|\sum_0^{n-1}a_ix^i\Big|\Big|_1\right)
-\end{align*}
+Notice that this is equivalent to finding $C$ such that
+\[
+	\bigg|\bigg|\frac{p}{||p||_3}\bigg|\bigg|_1\leq C,
+\]
+so without loss of generality we can consider $p$ with $||p||_3=1$. And show that
+\[
+	||p||_1\leq C.
+\]
+
+In order to continue with the proof consider the shifted Lengedre polynomials
+(the usual Legendre polynomials are defined on [-1,1] but the shifted Legendre
+polynomials are defined on [0,1]). We will denote the $i-th$ shifted Legendre
+polynomial by $L_i$. These polynomials have the following properties which I
+will not proof because it would be too long:
+\begin{enumerate}
+	\item $\{L_i\}_{i=0,\dots,n}$ forms a basis for $X$
+	\item $\int_0^1 L_iL_j=\frac{\delta_{ij}}{2i+1}$
+	\item $||L_i||_1=\max_{x\in[0,1]}|L_i|\leq 1 \quad \forall i$
+\end{enumerate}
+
+\textbf{Proof:}
+
+Take $p$ with $||p||_3=1$. By property (1) we can write $p$ as:
+\[
+	p=\sum_0^n a_iL_i,
+\]
+then using property (2) we get
+\[
+	1=\int_0^1|p|^2=\int_0^1\left(\sum_0^na_iL_i\right)^2=\sum_0^n\frac{a_i^2}{2i+1},
+\]
+which implies that $\frac{|a_i|}{\sqrt{2i+1}}\leq 1$ for $i=0,\dots,n$.
+
+Now notice that
+\[
+	||p||_1\leq\sum_0^n|a_i|||L_i||_1 \leq \sum_0^n\sqrt{2i+1}.
+\]
+Where we used the previous inequality and property (3). So our explicit
+constant is:
+\[
+	C=\sum_0^n\sqrt{2i+1}.
+\]
 \section*{Problem 4}
 \end{document}
