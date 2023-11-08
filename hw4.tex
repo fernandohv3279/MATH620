@@ -92,8 +92,8 @@ function on [0,1] so in particular this is true for all polynomials.
 In order to prove that these norms are equivalent we can just repeat the proof
 that all norms are equivalent which only uses the fact that the norm is
 continuous and the unit ball is compact, but given the conversation we had in
-class we want to find an explicit constant for each case.
-\subsubsection*{$||\cdot||_1$ vs $||\cdot||_3$}
+class \textbf{we want to find an explicit constant for each case.}
+\subsubsection*{Equivalence of $||\cdot||_1$ and $||\cdot||_3$}
 We want to find $c$ and $C$ so that
 \[
 	c||p||_3\leq ||p||_1 \leq C||p||_3.
@@ -134,16 +134,102 @@ then using property (2) we get
 \[
 	1=\int_0^1|p|^2=\int_0^1\left(\sum_0^na_iL_i\right)^2=\sum_0^n\frac{a_i^2}{2i+1},
 \]
-which implies that $\frac{|a_i|}{\sqrt{2i+1}}\leq 1$ for $i=0,\dots,n$.
+which implies that
+\begin{equation}\label{coefsineq}
+	\frac{|a_i|}{\sqrt{2i+1}}\leq 1 \quad \text{for} \quad i=0,\dots,n.
+\end{equation}
 
 Now notice that
 \[
 	||p||_1\leq\sum_0^n|a_i|||L_i||_1 \leq \sum_0^n\sqrt{2i+1}.
 \]
-Where we used the previous inequality and property (3). So our explicit
+Where we used (\ref{coefsineq}) and property 3 of $L_i$. So our explicit
 constant is:
 \[
 	C=\sum_0^n\sqrt{2i+1}.
+\]
+Which concludes the proof. $\qedsymbol$
+\subsubsection*{Equivalence of $||\cdot||_2$ and $||\cdot||_3$}
+We will use the shifted Legendre polynomials again, but also the regular
+Legendre polynomials (on [-1,1]) which we will denote by $P_i$.
+
+\textbf{Lema 1:} $P_i'(x)$ achieves a maximum on $x=1$.
+
+\textbf{Proof:}
+
+We proceed by induction. The base case is trivial.
+
+From the Wikipedia article we have this equality for the Legendre polynomials
+(not shifted):
+\begin{equation}\label{difLegendre}
+	\frac{d}{dx}P_{i+1}(x)= (i+1)P_i(x)+x\frac{d}{dx}P_i(x),
+\end{equation}
+is easy to see that $P_i'(x)$ is maximized when $x=1$ because we also know that
+$P_i(x)$ is maximized when $x=1$. $\qedsymbol$
+
+\textbf{Lema 2:} $\max_{x\in[0,1]}|P_i'(x)|\leq \frac{i(i+1)}{2}$.
+
+\textbf{Proof:}
+
+Again we use induction. The base case is trivial. And again using
+(\ref{difLegendre}) and Lema 1 we get that the maximum of $P_{i+1}'$ is:
+\[
+	P_{i+1}'(1)=(i+1)P_i(1)+P_i'(1)=i+1+\frac{i(i+1)}{2}=\frac{(i+1)(i+2)}{2}.\qedsymbol
+\]
+
+\textbf{Lema 3:} $\max_{x\in[0,1]}|L_i'(x)|\leq i(i+1)$.
+
+\textbf{Proof:}
+
+This follows from Lema 2 and the fact that $L_i(x)=P_i(2x-1)$. $\qedsymbol$
+
+\textbf{Lema 4:} For a polynomial $p$ with $||p||_3=1$ we have
+\[
+||p'||_1\leq \sum_0^n (i^2+i)\sqrt{2i+1}.
+\]
+
+\textbf{Proof:}
+
+This is the same idea as before, we write
+\[
+	p=\sum_0^na_iL_i,
+\]
+then
+\[
+	p'=\sum_0^na_iL_i'
+\]
+and
+\[
+	||p'||_1 \leq \sum_0^n|a_i|||L_i'||_1.
+\]
+Using Lema 3 and (\ref{coefsineq}) we obtain
+\[
+	||p'||_1 \leq \sum_0^n\left(\sqrt{2i+1}\right)\left(i(i+1)\right)=\sum_0^n (i^2+i)\sqrt{2i+1}. \qedsymbol
+\]
+
+\textbf{Solution to the exercise:}
+
+We want to find constants $c$ and $C$ such that:
+\[
+	c||p||_3\leq ||p||_2 \leq C||p||_3.
+\]
+Just like in the previous question we can take $c=1$ because
+\[
+||p||_3^2=\int_0^1|p|^2\leq \int_0^1||p||_1^2=||p||_1^2\leq ||p||_2^2.
+\]
+The last inequality above is immediate from the definition of $||\cdot||_1$ and $||\cdot||_2$.
+
+Now we need to find $C$. Again WLOG we can assume $||p||_3=1$ and prove that
+\[
+	||p||_2\leq C
+\]
+Notice that $||p||_2=||p||_1+ ||p'||_1$ so using the previous problem and Lema 4 we get:
+\[
+	||p||_2=||p||_1+||p'||_1 \leq \sum_0^n \sqrt{2i+1} + \sum_0^n (i^2+i)\sqrt{2i+1} = \sum_0^n (i^2+i+1)\sqrt{2i+1}
+\]
+So our explicit constant is:
+\[
+	C=\sum_0^n (i^2+i+1)\sqrt{2i+1}.
 \]
 \section*{Problem 4}
 \end{document}
