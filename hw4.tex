@@ -231,5 +231,24 @@ So our explicit constant is:
 \[
 	C=\sum_0^n (i^2+i+1)\sqrt{2i+1}.
 \]
+\subsubsection*{Some comments on this problem}
+I had to do a lot of reading for this problem and I found a
+couple of interesting things. In general the constants I found are pretty bad,
+specially for $\max_{x\in[0,1]}|p'|$. It turns out that there is result called
+Markov brothers' inequality that tells us that for a polynomial $p$ of degree
+$n$
+\[
+\max_{x\in[0,1]}|p'(x)|\leq n^2 \max_{x\in[0,1]}|p|.
+\]
+And this is actually the best possible bound because it is achieved by the
+Chebyshev polynomials. The proofs I found of the Markov brother's inequality
+were long and complicated. I also read that of all the polynomials of degree
+$n$ bounded by 1 the $n-th$ Chebyshev polynomial is the monic polynomial that
+achieves the maximum derivative so I think that maybe by using Chebyshev
+instead of Legendre we could achieve a better bound. Also as a historical note
+the Markov's brothers inequality was proved by Andrey Markov, a Russian
+mathematician known for the Markov chains. His younger brother Vladimir Markov
+generalized this result to $n$ derivatives. Unfortunately that is basically all
+the mathematics he is known for because he died of tuberculosis at 25 :(.
 \section*{Problem 4}
 \end{document}
