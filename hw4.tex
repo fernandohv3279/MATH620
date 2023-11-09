@@ -284,5 +284,26 @@ d-kp >sp\\
 \item	$5/2 - 2 >s$ implies there are singular functions with $s>0$ on $H^2$ for $d=5$.
 \end{itemize}
 \section*{Problem 5}
+\subsection*{Part a}
+The inference should be
+\[
+	S(k',p'd) \subset S(k,p,d) \implies W^{k',p'} \subset W^{k,p}
+\]
+It makes sense because if $u_s\in W^{k',p'}$ it means that $s \in S(k',p'd)$,
+then because of the first inclusion we have $s \in S(k,p,d)$ which means $u_s
+\in W^{k,p}$.
+\subsection*{Part b}
+$s\in S(k',p',d)$ means $s<\frac{d}{p'}-k'$ and $s\in S(k,p,d)$ means
+$s<\frac{d}{p}-k$, so the inclusion means that
+\[
+	\frac{d}{p'}-k' \leq \frac{d}{p}-k.
+\]
+\subsection*{Part c}
+This is not a proof because we are using a very specific type of functions.
+\subsection*{Part d}
+I looked up the Sobolev embedding theorem and it is basically the same but it has an equal sign and they assume that $k > k'$ and $p > p'$. Maybe it is the same. I am not sure.
 \section*{Project ideas}
+I would like to make a simple 2D model of a wheel and try to optimize the
+compression strength given a certain weight and some other constraints like
+radial symmetry. If possible I would like to solve the model on a computer.
 \end{document}
