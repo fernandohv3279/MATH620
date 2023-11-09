@@ -255,6 +255,34 @@ Andrey's younger brother Vladimir Markov generalized this result to $n$
 derivatives in 1892 when he was only 21. Unfortunately he didn't do much more
 math than that because died of tuberculosis at 25 :(.
 \section*{Problem 4}
+In order for $u$ to be in $W^{k,p}(B_1(0))$ we need that
+\[
+	\int_{B_1(0)} |\nabla^k u|^p < \infty
+\]
+Because of the discussion we had in class we can expect this integral to behave
+similarly to
+\[
+	\int_0^1 r^{d-1}\cdot\bigg|\frac{d^k}{dr^k} r^{-s}\bigg|^p = \int_0^1
+	cr^{d-1}r^{-sp-kp} = \int_0^1 cr^{d-1-sp-kp},
+\]
+where $c$ is some constant that comes from differentiating $k$ times. For this integral to converge we need that
+\begin{align*}
+d-1-sp-kp >-1\\
+d-kp >sp\\
+\frac{d}{p}-k >s\\
+\end{align*}
+\begin{itemize}
+\item	$1/2 - 1 >s$ implies there are no singular functions with $s>0$ on $H^1$ for $d=1$.
+\item	$2/2 - 1 >s$ implies there are no singular functions with $s>0$ on $H^1$ for $d=2$.
+\item	$3/2 - 1 >s$ implies there are singular functions with $s>0$ on $H^1$ for $d=3$.
+\end{itemize}
+\begin{itemize}
+\item	$1/2 - 2 >s$ implies there are no singular functions with $s>0$ on $H^2$ for $d=1$.
+\item	$2/2 - 2 >s$ implies there are no singular functions with $s>0$ on $H^2$ for $d=2$.
+\item	$3/2 - 2 >s$ implies there are no singular functions with $s>0$ on $H^2$ for $d=3$.
+\item	$4/2 - 2 >s$ implies there are no singular functions with $s>0$ on $H^2$ for $d=4$.
+\item	$5/2 - 2 >s$ implies there are singular functions with $s>0$ on $H^2$ for $d=5$.
+\end{itemize}
 \section*{Problem 5}
 \section*{Project ideas}
 \end{document}
