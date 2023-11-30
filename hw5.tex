@@ -33,25 +33,14 @@ Wolfram Alpha its derivative looks like this:
 Then multiplying by $u$ kills everything after 0 and multiplies by -1 the part
 before 0. If we integrate that, the result is clearly not 0.
 \subsection*{Part 2}
-We want to find $g$ such that
-\[
-	\int u |\nabla \phi| = -\int g \phi
-\]
-for all bump functions $\phi$.
-
 Following the suggestion we change to polar coordinates.
 Then $u$ becomes:
 \[
 u(\theta)=\sin(\arctan(\tan(\theta)))=\begin{cases}
 	\sin(\theta) \quad \text{for } -\frac{\pi}{2} < \theta < \frac{\pi}{2}\\
 	-\sin(\theta) \quad \text{for } \frac{\pi}{2} < \theta < \frac{3\pi}{2}
-\end{cases}
+\end{cases}.
 \]
-and we want to find $g$ such that
-\[
-	\int_{B_1(0)}ru\phi'=\int_{B_1(0)}rg\phi
-\]
-for all bump functions $\phi$.
 Intuitively the weak derivative should be
 \[
 g(\theta)=\begin{cases}
@@ -61,10 +50,13 @@ g(\theta)=\begin{cases}
 \]
 Now let's prove it
 \begin{align*}
-	\int_{B_1(0)}ru\phi' &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^1 r\sin(\theta)\phi'drd\theta\\
-		      &+\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \int_0^1 r\sin(\theta)\phi'drd\theta\\
-		      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin(\theta) \int_0^1 r\phi'drd\theta\\
-	  	      &+ \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\sin(\theta) \int_0^1 r\phi'drd\theta
+	\int_{B_1(0)}ru\partial_r\phi &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^1 r\sin(\theta)\partial_r\phi drd\theta
+		      -\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \int_0^1 r\sin(\theta)\partial_r\phi drd\theta\\
+		      &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin(\theta) \int_0^1 r\partial_r\phi drd\theta
+		      - \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\sin(\theta) \int_0^1 r\partial_r\phi drd\theta\\
+		      &= -\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin(\theta) \int_0^1 \phi drd\theta
+		      + \int_{\frac{\pi}{2}}^{\frac{3\pi}{2}}\sin(\theta) \int_0^1 \phi drd\theta \quad \text{(Int by Parts)}\\
+		      &= -\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sin(\theta) \int_0^1 \phi drd\theta
 \end{align*}
 \section*{Problem 2}
 Let $\varphi$ be a linear functional. We have to prove that $\varphi$ is continuous
