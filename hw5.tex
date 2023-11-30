@@ -69,22 +69,20 @@ Now let's prove it
 \section*{Problem 2}
 Let $\varphi$ be a linear functional. We have to prove that $\varphi$ is continuous
 iff $\varphi$ is bounded.
-\subsection*{continuous $\implies$ bounded}
-First notice that if $||x||_X=0$ then $x=0$ by properties of the norm and since
-$\varphi$ is linear $\varphi(x)=\varphi(0)=0$ and the inequality is trivially true. Now
-we can consider $x\neq0$. Then the inequality is equivalent to:
-\[
-	\bigg|\varphi\left(\frac{x}{||x||_X}\right)\bigg| \leq c
-\]
-where we used the fact that $\varphi$ is linear. Now because $\varphi$ is
-continuous by hypothesis and so is the absolute value their composition is
-continuous.
-\subsection*{bounded $\implies$ continuous}
-Let $x_k \to x$ i.e. $||x_k-x||_X \to 0$ as $k \to \infty$. By hipothesis
+\subsection*{Continuous $\implies$ Bounded}
+By contradiction assume that there is a continuous and unbounded $\varphi$.
+Then we can find a sequence $x_k$ such that $\varphi(x_k)>k$. And without loss
+of generality we can assume $||x_k||_X=1$. Now consider the sequence
+$\frac{x_k}{k}$. We can see that $||\frac{x_k}{k}||_X=1/k$, then $\frac{x_k}{k}
+\to 0$, but $\varphi(\frac{x_k}{k})=\frac{1}{k}\varphi(x_k)>1$. So
+$\varphi(\frac{x_k}{k}) \not \to 0$, which contradicts the hypothesis that
+$\varphi$ is continuous.
+\subsection*{Bounded $\implies$ Continuous}
+Let $x_k \to x$ i.e. $||x_k-x||_X \to 0$. By hipothesis
 \[
 	|\varphi(x_k-x)|\leq c ||x_k-x||_X
 \]
-so $\varphi(x_k-x) \to 0$ as $k \to \infty$.
+so $\varphi(x_k-x) \to 0$. Then by linearity $\varphi(x_k)\to \varphi(x)$.
 
 \section*{Problem 3}
 \section*{Problem 4}
