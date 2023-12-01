@@ -62,8 +62,24 @@ Now let's prove it. Let $B$ be the unit ball, then
 		      &=\int_0^1 \left(\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \cos(\theta)\phi d\theta - \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos(\theta)\phi d\theta \right) dr\\
 		      &=-\left(\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^1 \cos(\theta)\phi drd\theta
 		        -\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \int_0^1 \cos(\theta)\partial_\theta\phi drd\theta\right)\\
-		      &=-\int_{B}g\phi
+		      &=-\int_{B}g\phi.
 \end{align*}
+And analogously:
+\begin{align*}
+	\int_{B}u\partial_r\phi &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \int_0^1 \sin(\theta)\partial_r\phi drd\theta
+		      -\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \int_0^1 \sin(\theta)\partial_r\phi drd\theta\\
+		  &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin(\theta)\int_0^1 \partial_r\phi drd\theta
+		      -\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \sin(\theta)\int_0^1 \partial_r\phi drd\theta\\
+		  &=\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \sin(\theta) \phi(0,\theta)d\theta
+		      -\int_{\frac{\pi}{2}}^{\frac{3\pi}{2}} \sin(\theta)\phi(0,\theta) d\theta\\
+		  &=\int_{-\frac{\pi}{2}}^{\frac{3\pi}{2}} \sin(\theta) (\phi(0,\theta)-\phi(0,\theta))d\theta\\
+		  &=0.
+\end{align*}
+So the weak gradient IN THE POLAR COORDINATE SYSTEM is $(0,g(\theta))$. If we
+wanted the weak gradient in $x,y$ coordinates we would need to go back, but we
+can't just change variables because we would be ignoring the chain rule. Going
+back would require a lot of messy calculations I believe, so I will leave this
+expressed in the polar coordinate system.
 \section*{Problem 2}
 Let $\varphi$ be a linear functional. We have to prove that $\varphi$ is continuous
 iff $\varphi$ is bounded.
