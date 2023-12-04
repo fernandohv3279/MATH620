@@ -99,6 +99,29 @@ Let $x_k \to x$ i.e. $||x_k-x||_X \to 0$. By hipothesis
 so $\varphi(x_k-x) \to 0$. Then by linearity $\varphi(x_k)\to \varphi(x)$.
 
 \section*{Problem 3}
+\subsection*{Part 1}
+\subsubsection*{Linearity}
+\begin{align*}
+	\varphi(u+\lambda v) &= \int_\Omega a(x)(u+\lambda v)(x)dx\\
+	         &= \int_\Omega a(x)u(x)dx + \lambda\int_\Omega a(x)v(x)dx\\
+		 &= \varphi(u) + \lambda \varphi(v)
+\end{align*}
+\subsubsection*{Boundedness}
+By H\"older's inequality we have
+\[
+	|\varphi(u)|=\bigg|\int_\Omega a(x)u(x)dx\bigg|\leq ||a||_{L^q}||u||_{L^p}
+\]
+So in this case our constant is $||a||_{L^q}$, which is finite by hypothesis.
+\subsection*{Part 2}
+Let's do a simple example. For simplicity we pick $p=q=2$ and $\Omega = [0,1]$.
+Then we choose $a=\frac{1}{x^{0.75}}$. The functional that $u$ induces is
+\[
+	\varphi(u)=\int_0^1 \frac{u}{x^{0.75}}
+\]
+This functional is linear; however it is not bounded because if we consider the
+$L_2$ function $u=\frac{1}{x^{0.25}}$ then $\varphi(u)=\int_0^1
+\frac{1}{x}=\infty$. So this choice of $a$ does not give us a valid element of
+the dual space.
 \section*{Problem 4}
 \section*{Problem 5}
 \end{document}
