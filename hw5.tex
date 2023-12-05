@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
+\usepackage{bbm}
 \usepackage{amsfonts}
 \usepackage{mathtools}
 \usepackage{listings}
@@ -123,5 +124,46 @@ $L_2$ function $u=\frac{1}{x^{0.25}}$ then $\varphi(u)=\int_0^1
 \frac{1}{x}=\infty$. So this choice of $a$ does not give us a valid element of
 the dual space.
 \section*{Problem 4}
+As suggested by the hint we can use H\"older to obtain inequality. Now we have
+to prove that equality can actually be achieved.
+
+I think that this can be proved in a way that my analysis teacher called ``doing
+the trip by foot" which means it is pretty long, slow and mechanic but at the
+end it you will get there. The idea is to prove it for indicator functions of
+intervals, then for indicators of open sets, then for indicators of $G_\delta$
+sets (arbitrary intersections of open sets), then indicators of measurable
+sets, then for simple functions (finite sums of indicator functions of
+measurable sets) and finally for measurable functions. At each step we need to
+use some type of convergence theorem, dominated convergence theorem or
+monotonce convergence theorem or a similar argument to show that the limits
+behave well.
+
+There is probably a better way to do this but that's what I have in mind.
+
+Also this would be too long and I have to work on the project so I will just do
+a simple case. Taking $\Omega = \mathbb{R}$ and $a(x)$ an indicator function of
+an interval $[a,b]$.
+
+\textbf{Lemma 1:} In $\mathbb{R}$ the result is true for indicator functions of
+intervals.
+
+\textbf{Proof:} If $a(x)=\mathbbm{1}_{[a,b]}$ take
+$u(x)=(b-a)^{-1+1/q}\mathbbm{1}_{[a,b]}$, notice that
+\[
+	||u||_{L^p}=\left(\int_\Omega u^{p}\right)^{1/p}=\left(
+	(b-a)^{-1}\int_{[a,b]} 1 \right)^{1/p} =1.
+\]
+Also
+\[
+	\varphi(u)= \int_\mathbb{R} au = \int_\mathbb{R} (b-a)^{-1+1/q}
+	\mathbbm{1}_{[a,b]} =(b-a)^{1/q-1}\int_{[a,b]}1=(b-a)^{1/q}=||a||_{L^q},
+\]
+so equality is actually achieved.
+
+Now we need to continue in this manner, it is pretty long, but it think it
+works. I will stop here :)
 \section*{Problem 5}
+\subsubsection*{Part A}
+\subsubsection*{Part B}
+\subsubsection*{Part C}
 \end{document}
