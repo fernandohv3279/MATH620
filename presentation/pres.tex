@@ -1,0 +1,74 @@
+\documentclass{beamer}
+
+\usetheme{simple}
+
+% \usepackage{lmodern}
+% \usepackage[scale=2]{ccicons}
+\usepackage{amsmath}
+\usepackage{svg}
+\usepackage{ulem}
+\usepackage{mathtools}
+
+\title{Material distribution on wheels}
+% \subtitle{and the isoperimetric inequality}
+\date{\today}
+% \author{Fernando Herrera}
+% \institute{MATH 620}
+
+\begin{document}
+
+\maketitle
+
+\begin{frame}{The problem}
+    \begin{center}
+        \begin{itemize}
+           \item What is the strongest wheel we can build\\
+               using X amount of material?\\
+           \pause
+           \item What do we mean by strong?\\
+           \pause
+           \quad Stiff (Pa)
+           \pause
+           \item What are the properties of the material?\\
+           \pause
+           \quad Isotropic
+        \end{itemize}
+    \end{center}
+\end{frame}
+
+\begin{frame}{Approach}
+    \begin{center}
+        \Huge
+    \[
+        w:D_1 \to \{0,1\}
+    \]
+    \pause
+    \[
+        \rho:D_1 \to [0,1]
+    \]
+    \end{center}
+\end{frame}
+
+\begin{frame}{Approach}
+    \begin{center}
+        \Huge
+    \[
+        \min_\rho F(\rho)=\int_Df(\rho)
+    \]
+    Subject to
+    \[
+        \int_D\rho dV\leq V_0
+    \]
+    \pause
+    State field = ?
+    \end{center}
+\end{frame}
+
+\begin{frame}{Approach 2}
+    \begin{center}
+        \Huge
+        Bends{\o}e \& Sigmund
+    \end{center}
+\end{frame}
+
+\end{document}
